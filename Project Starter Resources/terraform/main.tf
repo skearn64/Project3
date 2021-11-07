@@ -59,7 +59,7 @@ module "vmlinux" {
   application_type = "${var.application_type}"
   resource_type    = "VMLinux"
   resource_group   = "${module.resource_group.resource_group_name}"
-  username         = "${var.username}"
+  admin_username   = "skadmin"
   subnet_id        = "${module.network.subnet_id_test}"
   public_ip_address = "${module.publicip.public_ip_address_id}"
 }
