@@ -16,5 +16,4 @@ variable address_space {}
 variable address_prefixes_test {}
 
 # VM
-variable username {}
 #variable public_ip_address {}
