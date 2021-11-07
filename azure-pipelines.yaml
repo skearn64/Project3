@@ -4,10 +4,18 @@ variables:
 stages:
 - stage: TerraformIaCCI
   displayName: TerraformIaC - CI
+  pool:
+    name: Hosted Ubuntu 1804
   jobs:
   - job: TerraformIaCCIJob
     displayName: TerraformIaCCI - CI Job
     steps:
+    # Needed for Terraform VM deployment
+    - task: InstallSSHKey@0
+      inputs:
+        knownHostsEntry: 'KNOWN_HOSTS_STRING'
+        sshPublicKey: 'PUBLIC_KEY'
+        sshKeySecureFile: 'id_rsa'
     # Step 1: Install Terraform
     - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
       displayName: 'Install Terraform 0.15.3'
