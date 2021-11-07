@@ -10,9 +10,9 @@ stages:
     steps:
     # Step 1: Install Terraform
     - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
-    displayName: 'Install Terraform 0.15.3'
-    inputs:
-      terraformVersion: 0.15.3
+      displayName: 'Install Terraform 0.15.3'
+      inputs:
+        terraformVersion: 0.15.3
     # Step 2: Initialise workspace using terraform init
     - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
       displayName: 'terraform init'
