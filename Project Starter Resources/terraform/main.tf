@@ -10,7 +10,7 @@ terraform {
     storage_account_name = "tfstate9935"
     container_name       = "qualrel"
     key                  = "terraform.qualrel"
-    access_key           = "D9JUrzkPQb6+k0dsYQiznSM+9Sp41N+nAiDDkGjdmknQzWXX79IkBuRLI+nG64YRJ3IsotJ/ua4qgdslzaF8RA=="
+    access_key           = "RqUPHeRuZj8Tb8c8FNdmjJJxCsQlTrQiuLWyBqPCbOX8wFTTl+hpBXuFOEyc8D7rmjqYK5Xa6+Np1DZa1zdQlg=="
   }
 }
 module "resource_group" {
