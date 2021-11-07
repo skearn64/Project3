@@ -2,6 +2,18 @@ name: Azure Pipelines
 variables:
   python.version: '3.7.6'
 stages:
+- stage: TerraformIaCCI
+  displayName: TerraformIaC - CI
+  jobs:
+  - job: TerraformIaCCIJob
+    displayName: TerraformIaCCI - CI Job
+    steps:
+    # Step 1: Install Terraform
+    - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
+    displayName: 'Install Terraform 0.15.3'
+    inputs:
+      terraformVersion: 0.15.3
+
 - stage: Build
   jobs:
   - job: Build
