@@ -26,7 +26,8 @@ stages:
         backendAzureRmContainerName: qualrel
         backendAzureRmKey: terraform.qualrel
     # Step 3. Validate HCL syntaxt using terraform validate
-    
+    - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
+      displayName: 'terraform validate'    
 - stage: Build
   jobs:
   - job: Build
