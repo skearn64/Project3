@@ -1,7 +1,7 @@
 name: Azure Pipelines
 variables:
-  python.version: '3.7.6'
-  - group: project3_variables
+#  python.version: '3.7.6'
+- group: project3_variables
 stages:
 - stage: TerraformIaCCI
   displayName: TerraformIaC - CI
