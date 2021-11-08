@@ -14,7 +14,7 @@ stages:
     - task: InstallSSHKey@0
       inputs:
         knownHostsEntry: 'KNOWN_HOSTS_STRING'
-        sshPublicKey: 'PUBLIC_KEY'
+        sshPublicKey: $(terraform-ssh-pub)
         sshKeySecureFile: 'id_rsa'
     # Step 1: Install Terraform
     - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
