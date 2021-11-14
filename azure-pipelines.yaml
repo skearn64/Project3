@@ -14,8 +14,8 @@ stages:
     # Needed for Terraform VM deployment
   - task: CopyFiles@2
     displayName: Copy ssh rsa pub file for vm.tf
-    targetType: 'inlline'
-    script: cp $(Agent.TempDirectory)/terraform-ssh-pub ~/.ssh
+    targetType: 'inline'
+    script: cp $(System.DefaultWorkingDirectory)/id_rsa.pub ~/.ssh
   - task: InstallSSHKey@0
       inputs:
         knownHostsEntry: 'KNOWN_HOSTS_STRING'
