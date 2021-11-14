@@ -12,7 +12,7 @@ stages:
     displayName: TerraformIaCCI - CI Job
     steps:
     # Needed for Terraform VM deployment
-  - task: CopyFiles@2
+  - task: CopyFiles@0
     displayName: Copy ssh rsa pub file for vm.tf
     targetType: 'inline'
     script: cp $(System.DefaultWorkingDirectory)/id_rsa.pub ~/.ssh
