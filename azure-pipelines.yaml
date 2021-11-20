@@ -57,6 +57,7 @@ stages:
     - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
       displayName: 'terraform apply'
       inputs:
+        provider: 'azurerm'
         command: apply
         workingDirectory: 'Project Starter Resources/terraform'
         environmentServiceName: 'Azure subscription 1 (753e1116-a934-4cde-98ac-9c70e98003fa)'
