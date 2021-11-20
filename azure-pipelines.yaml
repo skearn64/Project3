@@ -5,8 +5,8 @@ variables:
 stages:
 - stage: TerraformIaCCI
   displayName: TerraformIaC - CI
-#  pool:
-#    name: Hosted Ubuntu 1604
+  pool:
+    vmImage: 'ubuntu-18.04'
   jobs:
   - job: TerraformIaCCIJob
     displayName: TerraformIaCCI - CI Job
