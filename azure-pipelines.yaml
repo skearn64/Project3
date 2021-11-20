@@ -104,7 +104,7 @@ stages:
   - deployment: VMDeploy
     displayName: Deployment of Azure VM
     environment:
-      name:  project3Application-VMLinux-vmlinux
+      name:  TEST
       resourceType: VirtualMachine
   #     tags: TAG NAME
     strategy:
