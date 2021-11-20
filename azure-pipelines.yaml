@@ -100,28 +100,28 @@ stages:
               appName: 'proj3_qualrel-AppService'
               appType: webAppLinux
               package: $(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip
-   - deployment: VMDeploy
-     displayName: Deployment of Azure VM
-     environment:
-       name:  Project3_TEST
-       resourceType: VirtualMachine
+  - deployment: VMDeploy
+    displayName: Deployment of Azure VM
+    environment:
+      name:  Project3_TEST
+      resourceType: VirtualMachine
   #     tags: TAG NAME
-     strategy:
-       runOnce:
-         deploy:
-           steps:
-           - task: Bash@3
-             inputs:
-               targetType: 'inline'
-               script: |
-                 #! /bin/bash
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: Bash@3
+            inputs:
+              targetType: 'inline'
+              script: |
+                #! /bin/bash
                 
-                 sudo apt-get upgrade -y
-                 sudo apt-get install python3-pip -y
-                 sudo apt-get install unzip -y
-                 sudo apt-get install -y chromium-browser
-                 pip3 install selenium
-                 export PATH=$PATH:/Users/simonkearn/Documents/Nanodegree
+                sudo apt-get upgrade -y
+                sudo apt-get install python3-pip -y
+                sudo apt-get install unzip -y
+                sudo apt-get install -y chromium-browser
+                pip3 install selenium
+                export PATH=$PATH:/Users/simonkearn/Documents/Nanodegree
 - stage:
   jobs:
   - job: RunThroughPostmanTests
