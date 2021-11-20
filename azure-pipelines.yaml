@@ -6,7 +6,7 @@ stages:
 - stage: TerraformIaCCI
   displayName: TerraformIaC - CI
   pool:
-    vmImage: 'ubuntu-18.04'
+    vmImage: 'ubuntu-latest'
   jobs:
   - job: TerraformIaCCIJob
     displayName: TerraformIaCCI - CI Job
@@ -88,7 +88,7 @@ stages:
   jobs:
   - deployment: FakeRestAPI
     pool:
-      vmImage: 'Ubuntu-16.04'
+      vmImage: 'ubuntu-latest'
     environment: 'TEST'
     strategy:
       runOnce:
