@@ -103,7 +103,7 @@ stages:
   - deployment: VMDeploy
     displayName: Deployment of Azure VM
     environment:
-      name:  Project3_TEST
+      name:  TEST
       resourceType: VirtualMachine
   #     tags: TAG NAME
     strategy:
