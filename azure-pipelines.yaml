@@ -105,7 +105,7 @@ stages:
     displayName: Deployment of Azure VM
     environment:
       name:  TEST
-      resourceType: VirtualMachine
+  #    resourceType: VirtualMachine
   #     tags: TAG NAME
     strategy:
       runOnce:
