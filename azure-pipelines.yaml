@@ -123,6 +123,12 @@ stages:
                 sudo apt-get install -y chromium-browser
                 pip3 install selenium
                 export PATH=$PATH:/Users/simonkearn/Documents/Nanodegree
+          - task: Bash@3
+            displayName: Run Selenium Tests
+            inputs:
+              targetType: 'inline'
+              script:
+                python3 Project Starter Resources/automatedtesting/selenium/login.py > seleniumtestrun.log
 - stage:
   jobs:
   - job: RunThroughPostmanTests
@@ -131,11 +137,28 @@ stages:
       displayName: Install Newman
       inputs:
         script: 'sudo npm install -g newman'
-        workingDirectory: $(System.DefaultWorkingDirectory)
+        workingDirectory: '$(System.DefaultWorkingDirectory)'
     - task: CmdLine@2
-      displayName: Run Regression Tests
+      displayName: Run Regression Test Suite
       continueOnError: true
       inputs:
-        script: 'newman run StarterAPIs.json'
-        workingDirectory: 'Project Starter Resources/automatedtesting/postman'
-
+        script: 'newman run Project Starter Resources/automatedtesting/postman/StarterAPIs.json'
+        workingDirectory: '$(System.DefaultWorkingDirectory)'
+    - task: CmdLine@2
+      displayName: Run Data Validation Test Suite
+      inputs:
+        script: 'newman run Project Starter Resources/automatedtesting/postman/StarterAPIs.json'
+        workingDirectory: '$(System.DefaultWorkingDirectory)'
+    - task: PublishTestResults@2
+      displayName: Publish Postman Test Results
+      inputs:
+        searchFolder: '$(System.DefaultWorkingDirectory)/TestResults'
+  - job: JmeterTestRun
+    displayName: Jmeter Test Section
+    steps:
+      - task: Bash@3
+        displayName: Run Jmeter tests
+        inputs:
+          targetType: 'inline'
+          script: |
+            /Users/simonkearn/Documents/Nanodegree/apache-jmeter-5.4.1/bin/jmeter -n -t $(System.DefaultWorkingDirectory)/Project Starter Resources/automatedtesting/jmeter/Starter.jmx
