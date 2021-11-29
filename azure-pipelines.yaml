@@ -68,12 +68,6 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
-    # Needed for Terraform VM deployment
-    # - task: InstallSSHKey@0
-    #   inputs:
-    #     knownHostsEntry: 'KNOWN_HOSTS_STRING'
-    #     sshPublicKey: 'PUBLIC_KEY'
-    #     sshKeySecureFile: 'id_rsa'
     - task: ArchiveFiles@2
       displayName: 'Archive FakeRestAPI'
       inputs:
@@ -123,12 +117,12 @@ stages:
                 sudo apt-get install -y chromium-browser
                 pip3 install selenium
                 export PATH=$PATH:/Users/simonkearn/Documents/Nanodegree
-          - task: Bash@3
-            displayName: Run Selenium Tests
-            inputs:
-              targetType: 'inline'
-              script:
-                python3 Project Starter Resources/automatedtesting/selenium/login.py > seleniumtestrun.log
+#          - task: Bash@3
+#            displayName: Run Selenium Tests
+#            inputs:
+#              targetType: 'inline'
+#              script:
+#                python3 Project Starter Resources/automatedtesting/selenium/login.py > seleniumtestrun.log
 - stage:
   jobs:
   - job: RunThroughPostmanTests
@@ -153,12 +147,12 @@ stages:
       displayName: Publish Postman Test Results
       inputs:
         searchFolder: '$(System.DefaultWorkingDirectory)/TestResults'
-  - job: JmeterTestRun
-    displayName: Jmeter Test Section
-    steps:
-      - task: Bash@3
-        displayName: Run Jmeter tests
-        inputs:
-          targetType: 'inline'
-          script: |
-            /Users/simonkearn/Documents/Nanodegree/apache-jmeter-5.4.1/bin/jmeter -n -t $(System.DefaultWorkingDirectory)/Project Starter Resources/automatedtesting/jmeter/Starter.jmx
+#  - job: JmeterTestRun
+#    displayName: Jmeter Test Section
+#      steps:
+#      - task: Bash@3
+#        displayName: Run Jmeter tests
+#        inputs:
+#          targetType: 'inline'
+#          script: |
+#            /Users/simonkearn/Documents/Nanodegree/apache-jmeter-5.4.1/bin/jmeter -n -t $(System.DefaultWorkingDirectory)/Project Starter Resources/automatedtesting/jmeter/Starter.jmx
