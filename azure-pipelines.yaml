@@ -84,7 +84,7 @@ stages:
   - deployment: FakeRestAPI
     pool:
       vmImage: 'ubuntu-latest'
-    environment: $(environmentName)
+    environment: 'TEST'
     strategy:
       runOnce:
         deploy:
