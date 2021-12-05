@@ -137,12 +137,12 @@ stages:
       displayName: Run Regression Test Suite
       continueOnError: true
       inputs:
-        script: 'newman run $(System.DefaultWorkingDirectory)/Project Starter Resources/automatedtesting/postman/StarterAPIs.json'
+        script: 'newman run $(System.DefaultWorkingDirectory)/`Project Starter Resources`/automatedtesting/postman/StarterAPIs.json'
         workingDirectory: '$(System.DefaultWorkingDirectory)'
     - task: CmdLine@2
       displayName: Run Data Validation Test Suite
       inputs:
-        script: 'newman run $(System.DefaultWorkingDirectory)/Project Starter Resources/automatedtesting/postman/StarterAPIs.json'
+        script: 'newman run $(System.DefaultWorkingDirectory)/`Project Starter Resources`/automatedtesting/postman/StarterAPIs.json'
         workingDirectory: '$(System.DefaultWorkingDirectory)'
     - task: PublishTestResults@2
       displayName: Publish Postman Test Results
