@@ -32,7 +32,7 @@ stages:
       displayName: 'terraform init'
       inputs:
         command: init
-        workingDirectory: 'Project Starter Resources/terraform'
+        workingDirectory: 'ProjectStarterResources/terraform'
         backendType: azurerm
         backendServiceArm: 'Azure subscription 1 (753e1116-a934-4cde-98ac-9c70e98003fa)'
         backendAzureRmResourceGroupName: tfstate
@@ -44,13 +44,13 @@ stages:
       displayName: 'terraform validate'    
       inputs:
         command: validate
-        workingDirectory: 'Project Starter Resources/terraform'
+        workingDirectory: 'ProjectStarterResources/terraform'
     # Step 4. Run the terraform plan
     - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
       displayName: 'terraform plan'
       inputs:
         command: plan
-        workingDirectory: 'Project Starter Resources/terraform'
+        workingDirectory: 'ProjectStarterResources/terraform'
         environmentServiceName: 'Azure subscription 1 (753e1116-a934-4cde-98ac-9c70e98003fa)'
         commandOptions: -out project3cicd
     # Step 5. Run the terraform apply
@@ -59,7 +59,7 @@ stages:
       inputs:
         provider: 'azurerm'
         command: apply
-        workingDirectory: 'Project Starter Resources/terraform'
+        workingDirectory: 'ProjectStarterResources/terraform'
         environmentServiceName: 'Azure subscription 1 (753e1116-a934-4cde-98ac-9c70e98003fa)'
         commandOptions: project3cicd
 - stage: Build
@@ -71,7 +71,7 @@ stages:
     - task: ArchiveFiles@2
       displayName: 'Archive FakeRestAPI'
       inputs:
-        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/Project Starter Resources/automatedtesting/jmeter/fakerestapi'
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/ProjectStarterResources/automatedtesting/jmeter/fakerestapi'
         includeRootFolder: false
         archiveType: 'zip'
         archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip'
@@ -123,7 +123,7 @@ stages:
 #            inputs:
 #              targetType: 'inline'
 #              script:
-#                python3 Project Starter Resources/automatedtesting/selenium/login.py > seleniumtestrun.log
+#                python3 ProjectStarterResources/automatedtesting/selenium/login.py > seleniumtestrun.log
 - stage:
   jobs:
   - job: RunThroughPostmanTests
@@ -137,12 +137,12 @@ stages:
       displayName: Run Regression Test Suite
       continueOnError: true
       inputs:
-        script: 'newman run `$(System.DefaultWorkingDirectory)/Project Starter Resources/automatedtesting/postman/StarterAPIs.json`'
+        script: 'newman run ProjectStarterResources/automatedtesting/postman/StarterAPIs.json'
         workingDirectory: '$(System.DefaultWorkingDirectory)'
     - task: CmdLine@2
       displayName: Run Data Validation Test Suite
       inputs:
-        script: 'newman run `$(System.DefaultWorkingDirectory)/Project Starter Resources/automatedtesting/postman/StarterAPIs.json`'
+        script: 'newman run ProjectStarterResources/automatedtesting/postman/StarterAPIs.json'
         workingDirectory: '$(System.DefaultWorkingDirectory)'
     - task: PublishTestResults@2
       displayName: Publish Postman Test Results
@@ -156,4 +156,4 @@ stages:
 #        inputs:
 #          targetType: 'inline'
 #          script: |
-#            /Users/simonkearn/Documents/Nanodegree/apache-jmeter-5.4.1/bin/jmeter -n -t $(System.DefaultWorkingDirectory)/Project Starter Resources/automatedtesting/jmeter/Starter.jmx
+#            /Users/simonkearn/Documents/Nanodegree/apache-jmeter-5.4.1/bin/jmeter -n -t $(System.DefaultWorkingDirectory)/ProjectStarterResources/automatedtesting/jmeter/Starter.jmx
