@@ -100,7 +100,7 @@ stages:
     displayName: Deployment of Azure VM
     environment:
       name:  TEST
-      resourceType: VMLinux
+      resourceType: 'VMLinux'
   #     tags: TAG NAME
     strategy:
       runOnce:
