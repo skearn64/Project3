@@ -93,7 +93,7 @@ stages:
             displayName: 'Deploy Azure Web App'
             inputs:
               azureSubscription: 'Azure subscription 1 (753e1116-a934-4cde-98ac-9c70e98003fa)'
-              appName: 'proj3-qualrel-webapp'
+              WebAppName: 'proj3-qualrel-webapp'
               appType: webAppLinux
               package: $(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip
   - deployment: VMDeploy
