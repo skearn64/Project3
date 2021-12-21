@@ -119,7 +119,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"Completed\": \"{{Completed}}\"\n}",
+					"raw": "{\n    \"Completed\": true\n}",
 					"options": {
 						"raw": {
 							"language": "json"
