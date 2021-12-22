@@ -15,7 +15,7 @@
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Project3 Activities Data" enabled="true">
         <stringProp name="delimiter">,</stringProp>
         <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="filename">/Users/simonkearn/Documents/NanoDegree/Project3_New/Project3/ProjectStarterResources/automatedtesting/jmeter/response_activities.csv</stringProp>
+        <stringProp name="filename">ProjectStarterResources/automatedtesting/jmeter/response_activities.csv</stringProp>
         <boolProp name="ignoreFirstLine">false</boolProp>
         <boolProp name="quotedData">false</boolProp>
         <boolProp name="recycle">true</boolProp>
