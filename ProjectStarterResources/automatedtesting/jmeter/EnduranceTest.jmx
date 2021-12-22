@@ -27,7 +27,7 @@
       </ThreadGroup>
       <hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Project3 Activities Data" enabled="true">
-          <stringProp name="filename">/Users/simonkearn/Documents/NanoDegree/Project3_New/Project3/ProjectStarterResources/automatedtesting/jmeter/response_activities.csv</stringProp>
+          <stringProp name="filename">ProjectStarterResources/automatedtesting/jmeter/response_activities.csv</stringProp>
           <stringProp name="fileEncoding"></stringProp>
           <stringProp name="variableNames">ID,Title,DueDate,Completed</stringProp>
           <boolProp name="ignoreFirstLine">false</boolProp>
