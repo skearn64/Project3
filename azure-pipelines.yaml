@@ -129,10 +129,9 @@ stages:
                 wget https://chromedriver.storage.googleapis.com/96.0.4664.45/chromedriver_mac64.zip
                 unzip chromedriver_mac64.zip
                 echo $PWD
-#                export PATH=$PATH:/Users/simonkearn/Documents/Nanodegree
-#                chromedriver -v
                 echo $PATH
-                
+#                export PATH=$PATH:/Users/simonkearn/Documents/Nanodegree
+#                chromedriver -v                
 #          - task: Bash@3
 #            displayName: Run Selenium Tests
 #            inputs:
