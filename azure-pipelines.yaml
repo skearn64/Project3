@@ -130,7 +130,7 @@ stages:
                 # Get the version of Chromedriver selenium tests are written for
                 wget https://chromedriver.storage.googleapis.com/96.0.4664.45/chromedriver_mac64.zip
                 unzip chromedriver_mac64.zip
-                pip3 install --upgrade pip
+#                pip3 install --upgrade pip
                 pip3 install selenium
                 echo $PWD
                 echo $PATH
