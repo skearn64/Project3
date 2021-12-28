@@ -182,9 +182,10 @@ stages:
             
             # Remove previous jmeter zip file
             rm apache-jmeter-5.4.1.zip
+            echo $PWD
                 
             wget https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.4.1.zip
-            unzip apache-jmeter-5.4.1.zip 
+            unzip apache-jmeter-5.4.1.zip
       - task: Bash@3
         displayName: Run Jmeter tests
         inputs:
