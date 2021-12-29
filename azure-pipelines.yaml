@@ -156,10 +156,12 @@ stages:
             displayName: Run Selenium Tests
             inputs:
               targetType: 'inline'
-              script:
-                python3 /home/skadmin/azagent/_work/1/selenium/login.py > seleniumtestrun.log
-                cat seleniumtestrun.log
-                sudo mv seleniumtestrun.log /var/log
+              script: |
+                #! /bin/bash
+                
+                python3 /home/skadmin/azagent/_work/1/selenium/login.py > /home/skadmin/azagent/_work/1/selenium/seleniumtestrun.log
+                cat /home/skadmin/azagent/_work/1/selenium/seleniumtestrun.log
+                sudo mv /home/skadmin/azagent/_work/1/selenium/seleniumtestrun.log /var/log
 - stage: Run_Tests
   displayName: Run App Tests
   jobs:
