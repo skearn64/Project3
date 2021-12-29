@@ -212,11 +212,11 @@ stages:
           targetType: 'inline'
           script: |
             apache-jmeter-5.4.1/bin/jmeter -n -t $(System.DefaultWorkingDirectory)/ProjectStarterResources/automatedtesting/jmeter/StressTest.jmx \
-              -l /home/skadmin/azagent/_work/1/TestResults/jmeter/reports/stress_test_results.csv \
-              -e -f -o /home/skadmin/azagent/_work/1/TestResults/jmeter/reports/stress_test_dash_html-report \
-              -j /home/skadmin/azagent/_work/1/TestResults/jmeter/reports/stress_test.log
+              -l /home/skadmin/azagent/_work/1/TestResults/stress_test_results.csv \
+              -e -f -o /home/skadmin/azagent/_work/1/TestResults/stress_test_dash_html-report \
+              -j /home/skadmin/azagent/_work/1/TestResults/stress_test.log
 
             apache-jmeter-5.4.1/bin/jmeter -n -t $(System.DefaultWorkingDirectory)/ProjectStarterResources/automatedtesting/jmeter/EnduranceTest.jmx \
-              -l /home/skadmin/azagent/_work/1/TestResults/jmeter/reports/endurance_test_results.csv \
-              -e -f -o /home/skadmin/azagent/_work/1/TestResults/jmeter/reports/endurance_test_dash_html-report \
-              -j /home/skadmin/azagent/_work/1/TestResults/jmeter/reports/endurance_test.log
+              -l /home/skadmin/azagent/_work/1/TestResults/endurance_test_results.csv \
+              -e -f -o /home/skadmin/azagent/_work/1/TestResults/endurance_test_dash_html-report \
+              -j /home/skadmin/azagent/_work/1/TestResults/endurance_test.log
