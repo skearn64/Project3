@@ -159,7 +159,7 @@ stages:
               targetType: 'inline'
               script: |
                 python3 /home/skadmin/azagent/_work/1/selenium/login.py > /home/skadmin/azagent/_work/1/selenium/seleniumtestrun.log
-                # cat /home/skadmin/azagent/_work/1/selenium/seleniumtestrun.log
+                cat /home/skadmin/azagent/_work/1/selenium/seleniumtestrun.log
                 sudo mv /home/skadmin/azagent/_work/1/selenium/seleniumtestrun.log /var/log
 - stage: Run_Tests
   displayName: Run App Tests
@@ -213,12 +213,12 @@ stages:
         inputs:
           targetType: 'inline'
           script: |
-            apache-jmeter-5.4.1/bin/jmeter -n -t $(System.DefaultWorkingDirectory)/ProjectStarterResources/automatedtesting/jmeter/StressTest.jmx \
-              -l jmeter/reports/stress_test_results.csv \
-              -e -f -o jmeter/reports/stress_test_dash_html-report \
-              -j jmeter/reports/stress_test.log
+            apache-jmeter-5.4.1/bin/jmeter -n -t ProjectStarterResources/automatedtesting/jmeter/StressTest.jmx \
+              -l reports/stress_test_results.csv \
+              -e -f -o reports/stress_test_dash_html-report \
+              -j reports/stress_test.log
 
-            apache-jmeter-5.4.1/bin/jmeter -n -t $(System.DefaultWorkingDirectory)/ProjectStarterResources/automatedtesting/jmeter/EnduranceTest.jmx \
-              -l jmeter/reports/endurance_test_results.csv \
-              -e -f -o jmeter/reports/endurance_test_dash_html-report \
-              -j jmeter/reports/endurance_test.log
+            apache-jmeter-5.4.1/bin/jmeter -n -t ProjectStarterResources/automatedtesting/jmeter/EnduranceTest.jmx \
+              -l reports/endurance_test_results.csv \
+              -e -f -o reports/endurance_test_dash_html-report \
+              -j reports/endurance_test.log
