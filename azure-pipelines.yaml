@@ -222,3 +222,10 @@ stages:
               -l reports/endurance_test_results.csv \
               -e -f -o reports/endurance_test_dash_html-report \
               -j reports/endurance_test.log
+
+      - task: PublishPipelineArtifact@1
+        displayName: Archive JMeter Reports
+        inputs:
+          path: reports
+          artifact: jmeter_reports
+ 
