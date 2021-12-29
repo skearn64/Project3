@@ -6,7 +6,7 @@ import datetime
 
 # define the Chrome options and webdriver
 options = ChromeOptions()
-#options.add_argument("--headless")
+options.add_argument("--headless")
 driver = webdriver.Chrome(options=options)
 
 # Start the browser and login with standard_user
