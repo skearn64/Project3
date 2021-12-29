@@ -159,6 +159,7 @@ stages:
               script:
                 python3 /home/skadmin/azagent/_work/1/selenium/login.py > /home/skadmin/azagent/_work/1/TestResults/seleniumtestrun.log
                 cat /home/skadmin/azagent/_work/1/TestResults/seleniumtestrun.log
+                sudo mv /home/skadmin/azagent/_work/1/TestResults/seleniumtestrun.log /var/log/
 - stage: Run_Tests
   displayName: Run App Tests
   jobs:
