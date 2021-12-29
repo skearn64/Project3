@@ -141,7 +141,8 @@ stages:
                 rm chromedriver_linux64.zip
                 
                 # Get the version of Chromedriver selenium tests are written for
-                wget https://chromedriver.storage.googleapis.com/96.0.4664.45/chromedriver_linux64.zip
+                wget https://chromedriver.storage.googleapis.com/95.0.4638.69/chromedriver_linux64.zip
+                # wget https://chromedriver.storage.googleapis.com/96.0.4664.45/chromedriver_linux64.zip
                 unzip chromedriver_linux64.zip
                 sudo mv chromedriver /usr/bin/chromedriver
                 sudo chown root:root /usr/bin/chromedriver
