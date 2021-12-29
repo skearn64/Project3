@@ -212,11 +212,11 @@ stages:
           targetType: 'inline'
           script: |
             apache-jmeter-5.4.1/bin/jmeter -n -t $(System.DefaultWorkingDirectory)/ProjectStarterResources/automatedtesting/jmeter/StressTest.jmx \
-              -l $(System.DefaultWorkingDirectory)/ProjectStarterResources/automatedtesting/jmeter/reports/stress_test_results.csv \
-              -e -f -o $(System.DefaultWorkingDirectory)/ProjectStarterResources/automatedtesting/jmeter/reports/stress_test_dash_html-report \
-              -j $(System.DefaultWorkingDirectory)/ProjectStarterResources/automatedtesting/jmeter/reports/stress_test.log
+              -l jmeter/reports/stress_test_results.csv \
+              -e -f -o jmeter/reports/stress_test_dash_html-report \
+              -j jmeter/reports/stress_test.log
 
             apache-jmeter-5.4.1/bin/jmeter -n -t $(System.DefaultWorkingDirectory)/ProjectStarterResources/automatedtesting/jmeter/EnduranceTest.jmx \
-              -l $(System.DefaultWorkingDirectory)/ProjectStarterResources/automatedtesting/jmeter/reports/endurance_test_results.csv \
-              -e -f -o $(System.DefaultWorkingDirectory)/ProjectStarterResources/automatedtesting/jmeter/reports/endurance_test_dash_html-report \
-              -j $(System.DefaultWorkingDirectory)/ProjectStarterResources/automatedtesting/jmeter/reports/endurance_test.log
+              -l jmeter/reports/endurance_test_results.csv \
+              -e -f -o jmeter/reports/endurance_test_dash_html-report \
+              -j jmeter/reports/endurance_test.log
