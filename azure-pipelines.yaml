@@ -143,7 +143,8 @@ stages:
             inputs:
               targetType: 'inline'
               script:
-                python3 ProjectStarterResources/automatedtesting/selenium/login.py > /home/skadmin/azagent/_work/1/TestResults/seleniumtestrun.log
+                python3 $(System.DefaultWorkingDirectory)/ProjectStarterResources/automatedtesting/selenium/login.py > /home/skadmin/azagent/_work/1/TestResults/seleniumtestrun.log
+                cat /home/skadmin/azagent/_work/1/TestResults/seleniumtestrun.log
 - stage: Run_Tests
   displayName: Run App Tests
   jobs:
