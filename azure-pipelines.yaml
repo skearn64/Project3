@@ -151,7 +151,6 @@ stages:
                 echo $PWD
                 echo $PATH
                 chromedriver -v
-                chromium_browser --version
                 # pip install --upgrade pip
           - task: Bash@3
             displayName: Run Selenium Tests
