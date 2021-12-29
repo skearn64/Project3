@@ -138,12 +138,12 @@ stages:
                 echo $PATH
                 chromedriver -v
 #                pip install --upgrade pip
-#          - task: Bash@3
-#            displayName: Run Selenium Tests
-#            inputs:
-#              targetType: 'inline'
-#              script:
-#                python3 ProjectStarterResources/automatedtesting/selenium/login.py > seleniumtestrun.log
+          - task: Bash@3
+            displayName: Run Selenium Tests
+            inputs:
+              targetType: 'inline'
+              script:
+                python3 ProjectStarterResources/automatedtesting/selenium/login.py > /home/skadmin/azagent/_work/1/TestResults/seleniumtestrun.log
 - stage: Run_Tests
   displayName: Run App Tests
   jobs:
