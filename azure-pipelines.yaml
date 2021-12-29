@@ -35,6 +35,7 @@ stages:
         workingDirectory: 'ProjectStarterResources/terraform'
         backendType: azurerm
         backendServiceArm: 'Azure subscription 1 (753e1116-a934-4cde-98ac-9c70e98003fa)'
+        backendAzureRmResourceGroupLocation: uksouth
         backendAzureRmResourceGroupName: tfstate
         backendAzureRmStorageAccountName: tfstate9935
         backendAzureRmContainerName: qualrel
