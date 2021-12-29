@@ -125,7 +125,6 @@ stages:
                 sudo apt-get install python3-pip -y
                 sudo apt-get install unzip -y
                 sudo apt-get install -y chromium-browser
-                
           - task: Bash@3
             displayName: Install and setup Chromedriver
             inputs:
@@ -146,7 +145,7 @@ stages:
                 echo $PWD
                 echo $PATH
                 chromedriver -v
-#                pip install --upgrade pip
+                # pip install --upgrade pip
           - task: Bash@3
             displayName: Run Selenium Tests
             inputs:
