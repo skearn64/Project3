@@ -122,8 +122,10 @@ stages:
                 #! /bin/bash
                 
                 sudo apt-get upgrade -y
+                sudo apt-get update
                 sudo apt-get install python3-pip -y
                 sudo apt-get install unzip -y
+                sudo apt-get -f install
                 sudo apt-get install -y chromium-browser
           - task: Bash@3
             displayName: Install and setup Chromedriver
