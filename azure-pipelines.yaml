@@ -115,6 +115,9 @@ stages:
       runOnce:
         deploy:
           steps:
+          - download: current
+            displayName: Download selenium
+            artifact: selenium
           - task: Bash@3
             inputs:
               targetType: 'inline'
