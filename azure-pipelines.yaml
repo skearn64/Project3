@@ -128,6 +128,7 @@ stages:
                 sudo apt-get install python3-pip -y
                 sudo apt-get install unzip -y
                 sudo apt-get install -y chromium-browser
+                python3 -m pip install --upgrade pip
           - task: Bash@3
             displayName: Install and setup Chromedriver
             inputs:
