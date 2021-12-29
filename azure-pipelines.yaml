@@ -127,6 +127,7 @@ stages:
                 sudo apt-get upgrade -y
                 sudo apt-get install python3-pip -y
                 sudo apt-get install unzip -y
+                sudo apt-get install libgconf-2-4 libatk1.0-0 libatk-bridge2.0-0 libgdk-pixbuf2.0-0 libgtk-3-0 libgbm-dev libnss3-dev libxss-dev
                 # sudo apt-get install -y chromium-browser
                 # python3 -m pip install --upgrade pip
           - task: Bash@3
